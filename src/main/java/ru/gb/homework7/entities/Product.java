@@ -2,24 +2,21 @@ package ru.gb.homework7.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 
 @Entity
-@Table (name = "product")
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name="price")
+    @Column(name = "price")
     private int price;
 
 
@@ -46,11 +43,9 @@ public class Product {
         return title;
     }
 
-
     public int getPrice() {
         return price;
     }
-
 
     @Override
     public String toString() {
