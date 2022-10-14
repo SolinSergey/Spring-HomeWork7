@@ -44,4 +44,19 @@ public class ProductController {
         return "deleted";
     }
 
+    @GetMapping("/products/moremax/{maxPrice}")
+    public String findAllByMoreMaxPrice(@PathVariable int maxPrice){
+        return productService.findProductByMoreMaxPrice(maxPrice).toString();
+    }
+
+    @GetMapping("/products/lessmax/{maxPrice}")
+    public String findAllByLessMaxPrice(@PathVariable int maxPrice){
+        return productService.findProductByLessMaxPrice(maxPrice).toString();
+    }
+
+    @GetMapping("/products/between/{minPrice}/{maxPrice}")
+    public String findAllBetweenPrice(@PathVariable int minPrice,@PathVariable int maxPrice){
+        return productService.findProductByPriceBetween(minPrice,maxPrice).toString();
+    }
+
 }
